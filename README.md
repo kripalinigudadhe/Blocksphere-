@@ -32,6 +32,7 @@ cd BlockSphere
 
 2️⃣ Initialize and install dependencies:
 npm init -y
+
 npm install express sequelize mysql2 bcryptjs jsonwebtoken cors dotenv
 
 3️⃣ Configure the database:
