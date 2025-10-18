@@ -24,13 +24,15 @@ Database	MySQL
 Frontend	HTML, CSS, JavaScript
 Authentication	JSON Web Token (JWT), bcrypt
 Server	Express RESTful API
+
 ⚙️ Installation & Setup
 1️⃣ Clone the repository:
 git clone https://github.com/<your-username>/BlockSphere.git
 cd BlockSphere
 
-2️⃣ Install dependencies:
-npm install
+2️⃣ Initialize and install dependencies:
+npm init -y
+npm install express sequelize mysql2 bcryptjs jsonwebtoken cors dotenv
 
 3️⃣ Configure the database:
 
@@ -43,14 +45,10 @@ DB_NAME=blocksphere
 JWT_SECRET=your_jwt_secret
 PORT=5000
 
-4️⃣ Run database migrations (optional, if script included):
-npm run migrate
+4️⃣ Run the server:
+node index.js
 
-5️⃣ Start the server:
-npm start
-
-
-Server runs at → http://localhost:5000
+Your backend will start at 👉 http://localhost:5000
 
 🧠 API Endpoints
 🔐 Auth
