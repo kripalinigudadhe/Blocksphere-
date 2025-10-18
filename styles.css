@@ -1,0 +1,337 @@
+/* ===== RESET & GLOBAL ===== */
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", Segoe UI, Arial, sans-serif;
+  transition: all 0.2s ease;
+}
+/* Make footer stick to bottom even with little content */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* pushes footer down */
+  display: flex;
+  flex-direction: column;
+}
+
+
+body {
+  margin: 0;
+  background: #f8f6fc;
+  color: #2d2a32;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 28px;
+  background: linear-gradient(90deg, #6a11cb, #8a2be2);
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(106, 17, 203, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* ===== NAV LINKS ===== */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+nav ul li a.active {
+  background: #fff;
+  color: #6a11cb;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.4);
+}
+.auth-form {
+  transition: all 0.4s ease;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== CARD STYLING ===== */
+.card {
+  background: #fff;
+  margin: 24px auto;
+  padding: 24px;
+  border-radius: 14px;
+  max-width: 650px;
+  box-shadow: 0 4px 14px rgba(128, 0, 128, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(128, 0, 128, 0.15);
+}
+
+/* ===== AUTH FORMS ===== */
+/* ===== AUTH SECTION LAYOUT ===== */
+#auth {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: left;
+  margin: 40px auto;
+  width: 100%;
+  max-width: 450px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.auth-form h3 {
+  text-align: center;
+  color: #6a11cb;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.auth-form input:focus {
+  border-color: #8a2be2;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.15);
+}
+
+.auth-form button {
+  padding: 10px 16px;
+  background: linear-gradient(90deg, #8a2be2, #6a11cb);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.auth-form button:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.toggle-text {
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+
+.toggle-text a {
+  color: #6a11cb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.toggle-text a:hover {
+  text-decoration: underline;
+}
+
+
+/* ===== CREATE POST ===== */
+#create h3 {
+  color: #6a11cb;
+  text-align: center;
+}
+
+#create input,
+#create textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+#create textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+#create button {
+  background: linear-gradient(90deg, #8a2be2, #6a11cb);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+#create button:hover {
+  transform: scale(1.02);
+  opacity: 0.95;
+}
+
+/* ===== POSTS SECTION ===== */
+#posts h3 {
+  color: #6a11cb;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.post {
+  background: #faf7ff;
+  border-left: 5px solid #8a2be2;
+  padding: 14px 18px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.post:hover {
+  background: #f3e9ff;
+}
+
+.post h4 {
+  margin: 0 0 6px 0;
+  color: #4a148c;
+  font-size: 1.1rem;
+}
+
+.post p {
+  margin: 0;
+  color: #444;
+}
+
+.no-posts {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+  padding: 10px;
+}
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 16px;
+  color: #666;
+  background: #f0eaff;
+  font-size: 14px;
+  border-top: 1px solid #ddd;
+  margin-top: auto;
+  width: 100%;
+}
+
+/* ===== ANIMATIONS ===== */
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 650px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .card {
+    margin: 16px;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  nav ul li a {
+    font-size: 0.95rem;
+  }
+}
+/* ===== GLOBAL BUTTON STYLE ===== */
+.btn {
+  background: linear-gradient(90deg, #8a2be2, #6a11cb);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn:hover {
+  transform: scale(1.02);
+  opacity: 0.95;
+}

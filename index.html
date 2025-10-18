@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>BlogSphere</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ===== HEADER / NAVBAR ===== -->
+    <header>
+      <div class="navbar">
+        <div class="logo">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3649/3649465.png"
+            alt="BlogSphere Logo"
+          />
+          <h1>BlogSphere</h1>
+        </div>
+        <nav id="nav">
+          <!-- Links will be dynamically added by app.js -->
+        </nav>
+      </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main>
+     <!-- AUTH SECTION -->
+<section id="auth" class="fade-in">
+  <!-- LOGIN FORM -->
+  <div id="login" class="card auth-form">
+    <h3>Login</h3>
+    <input id="login-username" type="text" placeholder="Username" />
+    <input id="login-password" type="password" placeholder="Password" />
+    <button id="btn-login">Login</button>
+    <p class="toggle-text">
+      Don't have an account?
+      <a href="#" id="go-register">Register</a>
+    </p>
+  </div>
+
+  <!-- REGISTER FORM -->
+  <div id="register" class="card auth-form" style="display: none;">
+    <h3>Register</h3>
+    <input id="register-username" type="text" placeholder="Username" />
+    <input id="register-email" type="email" placeholder="Email" />
+    <input id="register-password" type="password" placeholder="Password" />
+    <button id="btn-register">Register</button>
+    <p class="toggle-text">
+      Already have an account?
+      <a href="#" id="go-login">Login</a>
+    </p>
+  </div>
+</section>
+
+      <!-- CREATE POST SECTION -->
+      <section id="create" class="card fade-in" style="display:none">
+        <h3>Create a New Post ✨</h3>
+        <input id="title" placeholder="Post Title" />
+        <textarea
+          id="content"
+          placeholder="Write your thoughts here..."
+        ></textarea>
+        <button id="btn-create">Publish</button>
+          <!-- POSTS SECTION -->
+      <section id="posts" class="card fade-in">
+        <h3>Latest Posts</h3>
+        <div id="post-list" class="post-list">
+          <p class="no-posts">
+            No posts yet. Start writing your first blog!
+          </p>
+        </div>
+      </section>
+      </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <p>© 2025 BlogSphere — Built with 💜 and creativity.</p>
+    </footer>
+
+    <!-- ===== SCRIPT ===== -->
+     <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const loginForm = document.getElementById("login");
+  const registerForm = document.getElementById("register");
+  const goRegister = document.getElementById("go-register");
+  const goLogin = document.getElementById("go-login");
+
+  // Show register form
+  goRegister.addEventListener("click", (e) => {
+    e.preventDefault();
+    loginForm.style.display = "none";
+    registerForm.style.display = "block";
+  });
+
+  // Show login form
+  goLogin.addEventListener("click", (e) => {
+    e.preventDefault();
+    registerForm.style.display = "none";
+    loginForm.style.display = "block";
+  });
+});
+</script>
+    <script src="app.js"></script>
+  </body>
+</html>
